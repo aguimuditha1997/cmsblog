@@ -21,8 +21,8 @@ Route::middleware('auth')->group(function () {
     // Route::get('/member/blog',[BlogController::class, 'index']);
     // Route::get('/member/blog/{post}/edit',[BlogController::class, 'edit']);
 
-    Route::resource('/member/blog',BlogController::class)->names([
-        'index' => 'member.blog.index',
+    Route::resource('/member/blogs',BlogController::class)->names([
+        'index' => 'member.blogs.index',
         'edit'=>'member.blogs.edit'
     ]);
 });

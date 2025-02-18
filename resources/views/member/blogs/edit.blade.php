@@ -24,7 +24,7 @@
                             @method('put')
                                 <div>
                                     <x-input-label for="title" value="Title" />
-                                    <x-text-input id="title" name="title" type="text" class="mt-1 block w-full"/>
+                                    <x-text-input id="title" name="title" type="text" class="mt-1 block w-full" />
                                 </div>
                                 <div>
                                     <x-input-label for="description" value="Description" />
@@ -33,6 +33,22 @@
                                 <div>
                                     <x-input-label for="file_input" value="Thumbnail" />
                                     <input type="file" class="w-full border border-gray-300 rounded-md">
+                                </div>
+                                <div>
+                                    <input id="x" type="hidden" name="content">
+                                    <trix-editor input="x" class="border-grey-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm min-h-80"></trix-editor>
+                                </div>
+                                <div>
+                                    <select name="status" class="border-grey-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm">
+                                        <option value="draft">Simpan Sebagai Draft</option>
+                                        <option value="publish">publish</option>
+                                    </select>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <a href="{{ route('member.blogs.index')}}">
+                                        <x-secondary-button>Kembali</x-secondary-button>
+                                    </a>
+                                    <x-primary-button>{{ __('Simpan') }}</x-primary-button>
                                 </div>
                         </form>
                     </section>
